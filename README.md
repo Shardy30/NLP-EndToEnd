@@ -1,131 +1,33 @@
-# End to end Text-Summarizer-Project
+# End-to-End NLP Project with FastAPI and Hugging Face
 
-## Workflows
+This project implements an end-to-end Natural Language Processing (NLP) pipeline using FastAPI and Hugging Face transformers library. It consists of data ingestion, validation, transformation, model training, evaluation, and deployment stages.
 
-1. Update config.yaml
-2. Update params.yaml
-3. Update entity
-4. Update the configuration manager in src config
-5. update the conponents
-6. update the pipeline
-7. update the main.py
-8. update the app.py
+## Project Overview:
 
+- **Data Ingestion:** The pipeline begins by ingesting raw data using `DataIngestionTrainingPipeline`.
+- **Data Validation:** Next, data is validated and cleaned using `DataValidationTrainingPipeline`.
+- **Data Transformation:** Data is transformed and preprocessed for model training using `DataTransformationTrainingPipeline`.
+- **Model Training:** The model is trained using Hugging Face transformers library with `ModelTrainerTrainingPipeline`.
+- **Model Evaluation:** The trained model is evaluated for performance metrics using `ModelEvaluationTrainingPipeline`.
+- **Model Deployment:** Finally, the model is deployed using FastAPI for real-time predictions.
 
-# How to run?
-### STEPS:
+## Usage Instructions:
 
-Clone the repository
+1. **Run Stages:** Execute each stage of the pipeline in sequence by running the corresponding Python script.
+2. **Access Endpoints:** Utilize the FastAPI endpoints for training (`/train`) and predictions (`/predict`).
+3. **Customize Pipeline:** Customize each stage of the pipeline as per specific project requirements.
 
-```bash
-https://github.com/entbappy/End-to-end-Text-Summarization
-```
-### STEP 01- Create a conda environment after opening the repository
+Refer to the code and inline comments for detailed instructions and customization options.
 
-```bash
-conda create -n summary python=3.8 -y
-```
+## Requirements:
 
-```bash
-conda activate summary
-```
+- Python 3.x
+- FastAPI
+- Hugging Face transformers
+- uvicorn
 
+---
 
-### STEP 02- install the requirements
-```bash
-pip install -r requirements.txt
-```
+## About:
 
-
-```bash
-# Finally run the following command
-python app.py
-```
-
-Now,
-```bash
-open up you local host and port
-```
-
-
-```bash
-Author: Krish Naik
-Data Scientist
-Email: krishnaik06@gmail.com
-
-```
-
-
-
-# AWS-CICD-Deployment-with-Github-Actions
-
-## 1. Login to AWS console.
-
-## 2. Create IAM user for deployment
-
-	#with specific access
-
-	1. EC2 access : It is virtual machine
-
-	2. ECR: Elastic Container registry to save your docker image in aws
-
-
-	#Description: About the deployment
-
-	1. Build docker image of the source code
-
-	2. Push your docker image to ECR
-
-	3. Launch Your EC2 
-
-	4. Pull Your image from ECR in EC2
-
-	5. Lauch your docker image in EC2
-
-	#Policy:
-
-	1. AmazonEC2ContainerRegistryFullAccess
-
-	2. AmazonEC2FullAccess
-
-	
-## 3. Create ECR repo to store/save docker image
-    - Save the URI: 566373416292.dkr.ecr.us-east-1.amazonaws.com/text-s
-
-	
-## 4. Create EC2 machine (Ubuntu) 
-
-## 5. Open EC2 and Install docker in EC2 Machine:
-	
-	
-	#optinal
-
-	sudo apt-get update -y
-
-	sudo apt-get upgrade
-	
-	#required
-
-	curl -fsSL https://get.docker.com -o get-docker.sh
-
-	sudo sh get-docker.sh
-
-	sudo usermod -aG docker ubuntu
-
-	newgrp docker
-	
-# 6. Configure EC2 as self-hosted runner:
-    setting>actions>runner>new self hosted runner> choose os> then run command one by one
-
-
-# 7. Setup github secrets:
-
-    AWS_ACCESS_KEY_ID=
-
-    AWS_SECRET_ACCESS_KEY=
-
-    AWS_REGION = us-east-1
-
-    AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
-
-    ECR_REPOSITORY_NAME = simple-app
+This project demonstrates an end-to-end NLP pipeline implementation using FastAPI and Hugging Face transformers. From data preprocessing to model deployment, it offers a comprehensive solution for NLP tasks. Explore the capabilities and unleash the power of state-of-the-art NLP models with ease.
